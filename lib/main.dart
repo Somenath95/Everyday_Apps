@@ -10,18 +10,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
-     
       home: Scaffold(
-                
         appBar: AppBar(
           centerTitle: true,
           title: Text('Drawer'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.person_pin),
+              iconSize: 34,
+              onPressed: () {},
+            )
+          ],
         ),
         drawer: Drawer(
           child: ListView(
             children: <Widget>[
               UserAccountsDrawerHeader(
-                accountName:  Padding(
+                accountName: Padding(
                   padding: const EdgeInsets.only(left: 18.0),
                   child: Text('Sam Chucks'),
                 ),
@@ -30,7 +35,11 @@ class MyApp extends StatelessWidget {
                   child: Text("Society's Name"),
                 ),
                 currentAccountPicture: IconButton(
-                  icon: Icon(Icons.person, color: Colors.white, size: 50,),
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 50,
+                  ),
                   onPressed: () {},
                 ),
               ),
@@ -49,7 +58,14 @@ class MyApp extends StatelessWidget {
                 title: Text('Notice Board'),
                 onTap: () {},
               ),
-              Padding(padding: EdgeInsets.only(top: 150),),
+              ListTile(
+                leading: Icon(Icons.search),
+                title: Text("Who's vehicle it is"),
+                onTap: () {},
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 110),
+              ),
               Divider(
                 color: Colors.black,
               ),
